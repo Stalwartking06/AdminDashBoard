@@ -1,0 +1,43 @@
+form{
+  width: 75vw;
+}
+.form {
+  width: 30vw;
+  margin: auto;
+  text-align: center;
+  /* display: flex;
+  flex-direction: column;
+  align-items: center; */
+}
+
+.form div{
+  text-align: left;
+}
+
+.inputs{
+  width: 80%;
+  margin: auto;
+}
+
+.form input {
+  width: 100%; /* Adjust width as needed */
+  height: 30px; 
+  margin: 5px 0 20px 0;
+  border: 1px solid #2656ae; /* Change color as needed */
+  border-radius: 3px;
+  transition: border-color 0.3s ease; /* Add transition effect */
+}
+
+.form button{
+  width: 120px;
+  display: inline-block;
+  margin-bottom: 3%;
+  padding: 10px ;
+  margin-top: 20px;
+  background-color: #364fab;
+  color: white;
+  cursor: pointer;
+  font-size: 12px;
+  border: none;
+  box-shadow: 0 2px 0px 0 rgba(0, 0, 0, 0.2), 2px 3px 4px 0px rgba(0, 0, 0, 1.5);
+}

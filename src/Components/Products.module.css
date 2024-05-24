@@ -1,0 +1,71 @@
+.container{  
+  grid-area: main;
+  overflow-y: auto;
+  padding: 0 15px;
+  color: black;
+}
+.subContainer{
+  margin: auto;
+  text-align: center;
+}
+.table{
+  display: flex;
+  width: auto;
+  overflow-x: auto;
+  margin: auto;
+  padding: 10px;
+  justify-content: center;
+}
+tr:first-child{
+ background-color: hsl(227, 52%, 44%);
+ color: white;
+}
+
+th{
+  padding: 10px 40px;
+  font-size: 20px;
+}
+td{
+  padding: 15px 0;
+  font-size: 18px;
+}
+table, tr {
+  box-shadow: 0 2px 0 0 rgba(0, 0, 0, 0.2), 2px 3px 5px 0 rgba(0, 0, 0, 0.19);
+  border-collapse: collapse;
+}
+.icon{
+  border: none;
+  background-color: white;
+  padding: 5px;
+  font-size: 18px;
+  cursor: pointer;
+}
+
+.icon:hover{
+  color: red;
+  transform: scale(130%);
+  transition-delay: all 0.8s;
+}
+.btn{
+  margin: auto;
+  margin-bottom: 3%;
+  padding: 15px ;
+  margin-top: 25px;
+  background-color: #364fab;
+  color: white;
+  cursor: pointer;
+  font-size: 12px;
+  border: none;
+  box-shadow: 0 2px 0px 0 rgba(0, 0, 0, 0.2), 2px 3px 4px 0px rgba(0, 0, 0, 1.5);
+}
+
+@media screen and (max-width: 786px) {
+  th{
+    padding: 10px 40px;
+    font-size: 18px;
+  }
+  td{
+    padding: 15px 0;
+    font-size: 16px;
+  }
+}
