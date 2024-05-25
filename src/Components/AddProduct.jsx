@@ -3,8 +3,9 @@ import axios from "axios";
 
 function AddProduct() {
     const [p_id, setId] = useState('');
-    const [pname, setName] = useState('');
+    const [name, setName] = useState('');
     const [pdesc, setDesc] = useState('');
+    const [category, setCategory] = useState('');
     const [price, setPrice] = useState('');
     const [pimage, setFile] = useState(null);
 
@@ -13,8 +14,9 @@ function AddProduct() {
         const url = "http://localhost:3001/product";
         const formData = new FormData();
         formData.append('p_id', parseInt(p_id));
-        formData.append('name', pname);
+        formData.append('name', name);
         formData.append('description', pdesc);
+        formData.append('category', category);
         formData.append('pimage', pimage);
         formData.append('price', price);
        
@@ -42,7 +44,7 @@ function AddProduct() {
                     type="text" 
                     placeholder="Enter Name" 
                     onChange={(e) => setName(e.target.value)} 
-                    value={pname}
+                    value={name}
                 /><br />
                 <input 
                     type="number" 
@@ -55,6 +57,13 @@ function AddProduct() {
                     placeholder="Enter Desc" 
                     onChange={(e) => setDesc(e.target.value)} 
                     value={pdesc}
+                /><br />
+            
+                  <input 
+                    type="text" 
+                    placeholder="Enter Category" 
+                    onChange={(e) => setCategory(e.target.value)} 
+                    value={category}
                 /><br />
                 <input 
                     type="file" 
