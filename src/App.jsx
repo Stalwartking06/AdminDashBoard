@@ -9,6 +9,8 @@ import AddProduct from "./Components/AddProduct";
 import Customers from "./Components/Customers";
 import Orders from "./Components/Orders";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
+import UpdateProduct from "./Components/UpdateProduct";
+import DeleteProduct from "./DeleteProduct";
 
 function App() {
   const [openSidebarToggle, setOpenSidebarToggle] = useState(false);
@@ -32,6 +34,8 @@ function App() {
             <Route path="products" element={<Products />}>
             </Route>
             <Route path="addproduct" element={<AddProduct />} />
+            <Route path="updateproduct" element={<UpdateProduct />} />
+            <Route path="deleteproduct" element={<DeleteProduct />} />
 
             <Route path="category" element={<Category />} />
             <Route path="customers" element={<Customers />} />
