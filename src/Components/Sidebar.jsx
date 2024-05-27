@@ -57,12 +57,12 @@ function Sidebar({ openSidebarToggle, OpenSidebar }) {
             Orders
           </Link>
         </li>
-        <li className="sidebar-list-item">
+        {/* <li className="sidebar-list-item">
           <Link to="/setting">
             <BsFillGearFill className="icon" />
             Setting
           </Link>
-        </li>
+        </li> */}
       </ul>
     </aside>
   );

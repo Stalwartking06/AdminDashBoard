@@ -34,16 +34,15 @@ function Products() {
 
   const arrayDataItems = list.map((item, index) => (
     <tr key={item.p_id}>
-      <td>{index + 1}</td>
       <td>{item.p_id}</td>
       <td>{item.name}</td>
       <td>{item.category}</td>
       <td>{item.price}</td>
-      <td>
+      {/* <td>
         <button className={style.icon} onClick={() => deleteProduct(item.p_id)}>
           <RiDeleteBin6Fill />
         </button>
-      </td>
+      </td> */}
     </tr>
   ));
 
@@ -55,7 +54,6 @@ function Products() {
           <table>
             <tbody>
               <tr>
-                <th>Sr. No.</th>
                 <th>Product ID</th>
                 <th>Product Name</th>
                 <th>Category</th>
@@ -67,13 +65,13 @@ function Products() {
           </table>
         </div>
         <button className={style.btn}>
-          <Link to="/addproduct">ADD NEW PRODUCT</Link>
+          <Link to="/addproduct" style={{color:"white" , textDecoration:"none"}}>ADD NEW PRODUCT</Link>
         </button>&nbsp;
         <button className={style.btn}>
-          <Link to="/updateproduct">UPDATE PRODUCT</Link>
+          <Link to="/updateproduct"style={{color:"white" , textDecoration:"none"}}>UPDATE PRODUCT</Link>
         </button>&nbsp;
         <button className={style.btn}>
-          <Link to="/deleteproduct">DELETE PRODUCT</Link>
+          <Link to="/deleteproduct" style={{color:"white", textDecoration:"none"}}>DELETE PRODUCT</Link>
         </button>
       </div>
     </div>

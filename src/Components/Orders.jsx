@@ -1,20 +1,28 @@
+import React, { useEffect, useState } from "react";
+import axios from "axios";
 import styles from "./Orders.module.css";
 import { HiClipboardDocumentList, HiCurrencyDollar } from "react-icons/hi2";
 import { BsPeopleFill } from "react-icons/bs";
 
 const Orders = () => {
-  const list = [
-    { id: 1, date: "10/3/2024", amount: 50, status: "completed" },
-    { id: 2, date: "14/3/2024", amount: 30, status: "pending" },
-    { id: 3, date: "09/3/2024", amount: 100, status: "cancelled" },
-  ];
+  const [orders, setOrders] = useState([]);
 
-  const arrayDataItems = list.map((i) => (
-    <tr key={i.id}>
-      <td>{i.id}</td>
-      <td>{i.date}</td>
-      <td>{i.status}</td>
-      <td>$ {i.amount}</td>
+  useEffect(() => {
+    // Fetch orders from the backend
+    axios.get('http://localhost:3001/api/orders')
+      .then(response => {
+        setOrders(response.data);
+      })
+      .catch(error => {
+        console.error("There was an error fetching the orders!", error);
+      });
+  }, []);
+
+  const arrayDataItems = orders.map((order) => (
+    <tr key={order._id}>
+      <td>{order._id}</td>
+      <td>{new Date(order.date).toLocaleDateString()}</td>
+      <td> {order.amount}</td>
     </tr>
   ));
 
@@ -24,15 +32,15 @@ const Orders = () => {
         <h1>Orders</h1>
         <div className={styles.table}>
           <table>
-            <tbody>
+            <thead>
               <tr>
                 <th>Id</th>
                 <th>Date</th>
-                <th>Status</th>
-                <th>Amount </th>
+                <th>Amount</th>
               </tr>
+            </thead>
+              
               {arrayDataItems}
-            </tbody>
           </table>
         </div>
       </div>
